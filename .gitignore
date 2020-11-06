@@ -1,0 +1,5 @@
+/.vs
+/netcoreWebApi/bin
+/netcoreWebApplication/bin
+/netcoreWebApi/obj
+/netcoreWebApplication/obj
