@@ -11,7 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using netcoreWebApi_3_1.DAO;
+using netcoreWebApi_3_1.Models;
 
 namespace netcoreWebApi_3_1
 {
@@ -27,7 +27,7 @@ namespace netcoreWebApi_3_1
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {   
-            services.AddDbContext<MyDbContext>(options => options.UseMySQL(Configuration.GetConnectionString("MySQLConnection")));
+            services.AddDbContext<sbtestContext>(options => options.UseMySQL(Configuration.GetConnectionString("MySQLConnection")));
             services.AddControllers();
         }
 
