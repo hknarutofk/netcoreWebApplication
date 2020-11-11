@@ -46,20 +46,21 @@ namespace netcoreWebApi_3_1.Controllers
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] Sbtest1 value)
         {
-            if(value.Id != id)
+            if (value.Id != id)
             {
                 throw new Exception("id not equeal");
             }
             context.Sbtest1.Update(value);
+            context.SaveChanges();
         }
 
         // DELETE api/values/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
-            var item = context.Sbtest1.First(c => c.Id == id);
-            //item = myDbContext.Sbtest1.Single(c => c.id == id);
+            var item = context.Sbtest1.FirstOrDefault(c=>c.Id == id);
             context.Sbtest1.Remove(item);
+            context.SaveChanges();
         }
     }
 }
